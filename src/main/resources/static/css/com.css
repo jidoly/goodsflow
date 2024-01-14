@@ -1,4 +1,3 @@
-
 /* ------------------------------------------------------------ 폰트 시작 ------------------------------------------------------------ */
 
 @font-face {
@@ -12,6 +11,7 @@
     url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.ttf') format("truetype");
     font-display: swap;
 }
+
 @font-face {
     font-family: 'PyeongChangPeace-Bold';
     font-weight: 700;
@@ -31,27 +31,30 @@
     font-style: normal;
 }
 
-.font-base{
+.font-base {
     font-family: BMJUA;
     font-style: normal;
     font-size: 22px;
 }
-.font-base-nosize{
+
+.font-base-nosize {
     font-family: BMJUA;
     font-style: normal;
 }
 
-.font-title{
+.font-title {
     font-family: PyeongChangPeace-Bold;
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
 }
-.font-content{
+
+.font-content {
     font-family: PyeongChangPeace;
     font-style: normal;
     font-weight: 300;
 }
+
 /* ------------------------------------------------------------ 폰트 끝 ------------------------------------------------------------ */
 
 
@@ -69,8 +72,7 @@
     align-items: center;
     max-width: 460px;
     width: 100%;
-    max-height: 460px;
-    height: 100%;
+    min-height: 460px;
     position: relative;
     background: white;
     border-radius: 11%;
@@ -78,35 +80,92 @@
 }
 
 .com-btn {
-    border: 1px solid green!important;
-    border-radius: 68px!important;
-    color: #fff!important;
-    background: #807edd!important;
-    display: block!important;
-    box-sizing: border-box!important;
-    text-align: center!important;
-    width: 122px!important;
-    height: 100px!important;
-    float: right!important;
-    margin-left: 5px!important;
+    border: 1px solid green !important;
+    border-radius: 68px !important;
+    color: #fff !important;
+    background: #807edd !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    width: 122px !important;
+    height: 100px !important;
+    float: right !important;
+    margin-left: 5px !important;
 }
 
 /* 서브 navi */
-header.sub .head .right .bell span	{bottom: -12px;}
-div.navi .top_navi					{padding:15px; border-bottom:1px solid #eee;font-size: 0;box-sizing: border-box;height: 55px;}
-div.navi .top_navi a				{display: inline-block; width: 24px;}
-div.navi .top_navi a img			{width:9px}
-div.navi .top_navi a.cbtn			{margin-right:6px;}
-div.navi .top_navi a.cbtn img		{width: 16px;}
-div.navi ul							{background:#f8f8f8; border-bottom:1px solid #eee; padding: 6px 15px 7px;}
-div.navi ul	li						{display:inline-block; font: 400 13px/20px "Roboto", "Noto Sans KR", sans-serif; color:#333; background: url('static/images/_img/cont/his_arrow.png')no-repeat 0% 50% /4px; padding: 0 3px 0 11px;}
-div.navi ul	li:first-child			{background:none; padding-left:0}
-div.navi ul	li.on					{color:#807edd; font-weight:500}
+header.sub .head .right .bell span {
+    bottom: -12px;
+}
 
-div.navi .flex_top_navi				{display: flex; align-items: center; justify-content: space-between;}
-div.navi .flex_top_navi .btn_mini	{min-width: 75px;}
+div.navi .top_navi {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 0;
+    box-sizing: border-box;
+    height: 55px;
+}
+
+div.navi .top_navi a {
+    display: inline-block;
+    width: 24px;
+}
+
+div.navi .top_navi a img {
+    width: 9px
+}
+
+div.navi .top_navi a.cbtn {
+    margin-right: 6px;
+}
+
+div.navi .top_navi a.cbtn img {
+    width: 16px;
+}
+
+div.navi ul {
+    background: #f8f8f8;
+    border-bottom: 1px solid #eee;
+    padding: 6px 15px 7px;
+}
+
+div.navi ul li {
+    display: inline-block;
+    font: 400 13px/20px "Roboto", "Noto Sans KR", sans-serif;
+    color: #333;
+    background: url('static/images/_img/cont/his_arrow.png') no-repeat 0% 50% /4px;
+    padding: 0 3px 0 11px;
+}
+
+div.navi ul li:first-child {
+    background: none;
+    padding-left: 0
+}
+
+div.navi ul li.on {
+    color: #807edd;
+    font-weight: 500
+}
+
+div.navi .flex_top_navi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.navi .flex_top_navi .btn_mini {
+    min-width: 75px;
+}
+
 /* 메뉴*/
-div.navi .top_navi h2				{font-family: BMJUA; font-size: 24px; display: inline-block; vertical-align:middle; color:#000; margin-top:-11px}
+div.navi .top_navi h2 {
+    font-family: BMJUA;
+    font-size: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #000;
+    margin-top: -11px
+}
 
 .write-select {
     width: 100%;
@@ -121,7 +180,7 @@ div.navi .top_navi h2				{font-family: BMJUA; font-size: 24px; display: inline-b
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: #f8f8f8 url(/img/sel_arrow.png)no-repeat right 22px top 50%/15px;
+    background: #f8f8f8 url(/img/sel_arrow.png) no-repeat right 22px top 50%/15px;
     margin-bottom: 18px;
 }
 
@@ -140,4 +199,39 @@ input[type="text"] {
 
 .board {
     padding: 20px 15px 25px;
+}
+
+.groups-img-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    width: 188px;
+    height: 113px;
+    display: flex;
+    padding: 4px;
+}
+
+.tracking-list {
+    border: 2px solid #dfdfdf;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.trackings-btn {
+    border: 1px solid green !important;
+    border-radius: 68px !important;
+    color: #fff !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    width: 88px !important;
+    height: 32px !important;
+    float: right !important;
+    margin-left: 5px !important;
+    align-self: center;
+    background: #807edd !important; /* 공통 배경색 */
+}
+
+.cancel {
+    background: red !important; /* Cancel 버튼 배경색 */
 }

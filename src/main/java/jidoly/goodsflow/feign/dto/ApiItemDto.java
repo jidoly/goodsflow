@@ -7,4 +7,5 @@ public class ApiItemDto {
     private int idx;
     private boolean success;
     private ApiItemDataDto data;
+    private ApiErrorDto error;
 }

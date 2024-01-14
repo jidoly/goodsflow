@@ -7,4 +7,5 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 
 
     boolean existsByInvoiceNo(String invoiceNo);
+
 }

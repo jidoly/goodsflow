@@ -1,6 +1,7 @@
 package jidoly.goodsflow.controller.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jidoly.goodsflow.domain.Item;
 import jidoly.goodsflow.domain.Transporters;
 import lombok.Data;
 
@@ -20,4 +21,5 @@ public class ItemDto {
     @NotBlank
     //아이템 이름
     private String itemName;
+
 }

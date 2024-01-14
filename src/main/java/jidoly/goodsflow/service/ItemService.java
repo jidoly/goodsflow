@@ -4,8 +4,7 @@ import jidoly.goodsflow.controller.dto.ItemDto;
 import jidoly.goodsflow.controller.dto.TrackingDto;
 import jidoly.goodsflow.domain.Item;
 import jidoly.goodsflow.feign.ItemClient;
-import jidoly.goodsflow.feign.dto.ApiItemDto;
-import jidoly.goodsflow.feign.dto.ApiResponseDto;
+import jidoly.goodsflow.feign.dto.*;
 import jidoly.goodsflow.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +21,6 @@ import java.util.Optional;
 public class ItemService {
     private final ItemRepository itemRepository;
     private final ItemClient itemClient;
-
 
     @Transactional
     public Long saveTracking(ItemDto itemDto) {
@@ -61,4 +59,26 @@ public class ItemService {
 
     }
 
+    public List<Item> findTracking() {
+        return itemRepository.findAll();
+    }
+
+
+    @Transactional
+    public void deleteTracking(Long id) {
+
+        Item item = itemRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("해당 요청를 찾을수 없습니다. : " + id));
+        /** Api 삭제 로직 */
+        //Api 스펙에 맞춘 Dto 생성
+        DeleteItemDto deleteItemDto = new DeleteItemDto(item.getServiceId(), ReasonType.CHANGE_MIND);
+        DeleteDto deleteDto = new DeleteDto(deleteItemDto);
+        //feign 삭제 요청
+        ApiCancelResponseDto apiCancelResponseDto = itemClient.deleteTracking(deleteDto);
+        log.info("삭제 요청 완료 : {}", apiCancelResponseDto);
+
+
+        /** 데이터 베이스에서 삭제 */
+        itemRepository.deleteById(id);
+    }
 }
