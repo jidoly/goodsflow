@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>main</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/com.css}">
+</head>
+<body class="bodyCustom">
+
+    <div class="parents">
+        <h2 class="font-title">메인화면</h2>
+
+        <div class="flex">
+            <button class="com-btn font-base" th:onclick="|location.href='@{/tracking}'|">
+                운송장번호<br> 등록
+            </button>
+
+            <button class="com-btn font-base">목록보기</button>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>

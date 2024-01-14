@@ -1,0 +1,64 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>tracking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/com.css}">
+</head>
+<body class="bodyCustom">
+
+    <div class="parents">
+
+        <!-- 컨텐츠 시작 -->
+        <div id="sub_contents" class="board head_mg mb140 w-full">
+
+
+            <div class="navi">
+                <div class="top_navi"><a href="javascript:history.back();"><img src="/img/navi_arrow.png"></a>
+                    <h2 class="text-2xl">운송장번호 등록</h2>
+                </div>
+            </div>
+            <div class="bbs_write w_box top no_line">
+                <form action="" th:id="frm" th:action th:object="${itemDto}" method="post">
+                    <div>
+                        <select class="write-select create-group" th:field="*{transporter}">
+                            <option th:each="transporter : ${transporters}" th:value="${transporter.name()}" th:selected="${transporter.name() eq 'BOARD'}">
+                                <span th:if="${transporter.name() eq 'KOREX'}" th:selected="seleted">대한통운</span>
+                                <span th:if="${transporter.name() eq 'EPOST'}">우체국</span>
+                                <span th:if="${transporter.name() eq 'HANJIN'}">한진택배</span>
+                                </span>
+                            </option>
+                        </select>
+                    </div>
+
+                    <input type="text"
+                           th:field="*{invoiceNo}"
+                           placeholder="운송장번호"
+                           required=""
+                    />
+
+                    <input type="text"
+                           th:field="*{itemName}"
+                           placeholder="물건이름"
+                           required=""
+                    />
+                    <input type="text"
+                           th:field="*{uniqueId}"
+                           required=""
+                           placeholder="회원사 요청 번호"
+                    />
+                        <button type="submit" class="com-btn font-base">저장</button>
+
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>
