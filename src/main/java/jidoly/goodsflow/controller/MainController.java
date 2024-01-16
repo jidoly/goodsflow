@@ -46,13 +46,10 @@ public class MainController {
     public String postTracking(@Validated @ModelAttribute("itemDto") ItemDto itemDto,
                                  BindingResult bindingResult) throws IOException {
 
-        System.err.println(itemDto);
-
         if (bindingResult.hasErrors()) {
             // 유효성 검증 오류 처리
             return "tracking";
         }
-
         itemService.saveTracking(itemDto);
 
         return "redirect:/main";
